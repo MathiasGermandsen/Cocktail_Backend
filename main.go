@@ -1,7 +1,9 @@
 package main
 
 import (
+	"Cocktail_app/CocktailApp/config" // Import the config package
 	"Cocktail_app/CocktailApp/endpoint"
+
 	"net/http"
 	"os"
 
@@ -16,8 +18,8 @@ func main() {
 	// Register the /read endpoint.
 	http.HandleFunc("/read", endpoint.ReadHandler)
 
-	// Start the server using the StartServer function from config.go.
-	if err := StartServer(); err != nil {
+	// Call StartServer from the config package
+	if err := config.StartServer(); err != nil {
 		log.Fatal().Err(err).Msg("Could not start server")
 	}
 }

@@ -1,4 +1,4 @@
-package main
+package config
 
 import (
 	"fmt"
@@ -9,7 +9,6 @@ import (
 )
 
 func StartServer() error {
-	// Set up viper
 	viper.SetConfigFile(".env")
 	if err := viper.ReadInConfig(); err != nil {
 		return fmt.Errorf("error reading config file: %w", err)
